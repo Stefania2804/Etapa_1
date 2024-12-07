@@ -1,0 +1,115 @@
+[ {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Daniel",
+    "lastName" : "Masson",
+    "email" : "Daniel_Masson@outlook.fr",
+    "accounts" : [ {
+      "IBAN" : "RO58POOB7344468893732422",
+      "balance" : 1708.0,
+      "currency" : "EUR",
+      "type" : "classic",
+      "cards" : [ ]
+    } ]
+  }, {
+    "firstName" : "Cosmin",
+    "lastName" : "Popescu",
+    "email" : "Cosmin_Popescu@yahoo.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Ryan",
+    "lastName" : "Powell",
+    "email" : "Ryan_Powell@gmail.us",
+    "accounts" : [ {
+      "IBAN" : "RO69POOB6209498372540635",
+      "balance" : 1500.0,
+      "currency" : "USD",
+      "type" : "classic",
+      "cards" : [ ]
+    } ]
+  }, {
+    "firstName" : "Andrew",
+    "lastName" : "Klein",
+    "email" : "Andrew_Klein@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Andrew",
+    "lastName" : "Snyder",
+    "email" : "Andrew_Snyder@outlook.us",
+    "accounts" : [ {
+      "IBAN" : "RO90POOB5450777208072365",
+      "balance" : 615.0,
+      "currency" : "USD",
+      "type" : "classic",
+      "cards" : [ ]
+    } ]
+  }, {
+    "firstName" : "Marina",
+    "lastName" : "Diaconescu",
+    "email" : "Marina_Diaconescu@outlook.ro",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 7
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 11,
+    "description" : "Card not found"
+  },
+  "timestamp" : 11
+}, {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Daniel",
+    "lastName" : "Masson",
+    "email" : "Daniel_Masson@outlook.fr",
+    "accounts" : [ {
+      "IBAN" : "RO58POOB7344468893732422",
+      "balance" : 9118.0,
+      "currency" : "EUR",
+      "type" : "classic",
+      "cards" : [ {
+        "cardNumber" : "8207906978464446",
+        "status" : "active"
+      } ]
+    } ]
+  }, {
+    "firstName" : "Cosmin",
+    "lastName" : "Popescu",
+    "email" : "Cosmin_Popescu@yahoo.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Ryan",
+    "lastName" : "Powell",
+    "email" : "Ryan_Powell@gmail.us",
+    "accounts" : [ {
+      "IBAN" : "RO69POOB6209498372540635",
+      "balance" : 2725.0,
+      "currency" : "USD",
+      "type" : "classic",
+      "cards" : [ ]
+    } ]
+  }, {
+    "firstName" : "Andrew",
+    "lastName" : "Klein",
+    "email" : "Andrew_Klein@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Andrew",
+    "lastName" : "Snyder",
+    "email" : "Andrew_Snyder@outlook.us",
+    "accounts" : [ {
+      "IBAN" : "RO90POOB5450777208072365",
+      "balance" : 615.0,
+      "currency" : "USD",
+      "type" : "classic",
+      "cards" : [ ]
+    } ]
+  }, {
+    "firstName" : "Marina",
+    "lastName" : "Diaconescu",
+    "email" : "Marina_Diaconescu@outlook.ro",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 18
+} ]

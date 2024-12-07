@@ -10,4 +10,5 @@ public final class ObjectInput {
     private ExchangeInput[] exchangeRates;
     private CommandInput[] commands;
     private CommerciantInput[] commerciants;
+
 }
