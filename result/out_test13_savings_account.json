@@ -12,8 +12,7 @@
       "cards" : [ {
         "cardNumber" : "8207906978464446",
         "status" : "active"
-      } ],
-      "interestRate" : 0.7
+      } ]
     } ]
   }, {
     "firstName" : "Christine",
@@ -27,8 +26,7 @@
       "cards" : [ {
         "cardNumber" : "7901879264253296",
         "status" : "active"
-      } ],
-      "interestRate" : 0.16
+      } ]
     } ]
   }, {
     "firstName" : "Eugen",
@@ -42,8 +40,7 @@
       "cards" : [ {
         "cardNumber" : "7004757825892043",
         "status" : "active"
-      } ],
-      "interestRate" : 0.39
+      } ]
     } ]
   } ],
   "timestamp" : 14
@@ -61,8 +58,7 @@
       "cards" : [ {
         "cardNumber" : "8207906978464446",
         "status" : "active"
-      } ],
-      "interestRate" : 0.7
+      } ]
     } ]
   }, {
     "firstName" : "Christine",
@@ -76,8 +72,7 @@
       "cards" : [ {
         "cardNumber" : "7901879264253296",
         "status" : "active"
-      } ],
-      "interestRate" : 0.16
+      } ]
     } ]
   }, {
     "firstName" : "Eugen",
@@ -91,15 +86,14 @@
       "cards" : [ {
         "cardNumber" : "7004757825892043",
         "status" : "active"
-      } ],
-      "interestRate" : 0.39
+      } ]
     } ]
   } ],
   "timestamp" : 18
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "success" : "Account deleted",
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 19
   },
   "timestamp" : 19
@@ -117,8 +111,7 @@
       "cards" : [ {
         "cardNumber" : "8207906978464446",
         "status" : "active"
-      } ],
-      "interestRate" : 0.7
+      } ]
     } ]
   }, {
     "firstName" : "Christine",
@@ -132,8 +125,7 @@
       "cards" : [ {
         "cardNumber" : "7901879264253296",
         "status" : "active"
-      } ],
-      "interestRate" : 0.16
+      } ]
     } ]
   }, {
     "firstName" : "Eugen",
@@ -147,8 +139,7 @@
       "cards" : [ {
         "cardNumber" : "7004757825892043",
         "status" : "active"
-      } ],
-      "interestRate" : 0.39
+      } ]
     } ]
   } ],
   "timestamp" : 21

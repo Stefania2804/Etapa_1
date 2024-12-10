@@ -2,6 +2,8 @@ package org.poo.main;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public final class User {
     private String firstName;
@@ -12,6 +14,8 @@ public final class User {
     @JsonIgnore
     private ArrayList<Savings> savings;
     private ArrayList<Account> accounts;
+    @JsonIgnore
+    private List<Transaction> transactions;
 
     public User(final String firstName, final String lastName, final String email) {
         this.firstName = firstName;
@@ -20,6 +24,7 @@ public final class User {
         classics = new ArrayList<>();
         savings = new ArrayList<>();
         accounts = new ArrayList<>();
+        transactions = new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -70,6 +75,14 @@ public final class User {
         this.accounts = accounts;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     public void addClassic(final Classic account) {
         classics.add(account);
     }
@@ -88,5 +101,9 @@ public final class User {
         if (account.getClass() == Classic.class) {
             classics.remove(account);
         }
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
     }
 }

@@ -1,13 +1,9 @@
 package org.poo.main;
 
-import org.poo.utils.Utils;
-
-public class OnlinePayment implements PayStrategy {
+public final class OnlinePayment implements PayStrategy {
 
     @Override
-    public void pay(Account account, double amount) {
-        if (account.getBalance() >= amount) {
+    public void pay(final Account account, final double amount) {
             account.setBalance(account.getBalance() - amount);
-        }
     }
 }

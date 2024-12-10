@@ -46,7 +46,7 @@
     "email" : "Patrick_Cabrera@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 68.0,
+      "balance" : 75.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -86,7 +86,7 @@
     "email" : "Patrick_Cabrera@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1722.0,
+      "balance" : 1729.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {

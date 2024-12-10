@@ -1,14 +1,28 @@
 [ {
   "command" : "deleteAccount",
   "output" : {
-    "success" : "Account deleted",
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 9
   },
   "timestamp" : 9
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "success" : "Account deleted",
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "timestamp" : 9
+  },
+  "timestamp" : 9
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "timestamp" : 36
+  },
+  "timestamp" : 36
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 36
   },
   "timestamp" : 36
@@ -57,8 +71,7 @@
       "balance" : 23500.0,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.97
+      "cards" : [ ]
     }, {
       "IBAN" : "RO65POOB8944016386845896",
       "balance" : 3235.0,
@@ -109,8 +122,7 @@
       "cards" : [ {
         "cardNumber" : "5779026319169555",
         "status" : "active"
-      } ],
-      "interestRate" : 0.4
+      } ]
     } ]
   }, {
     "firstName" : "Sandra",
@@ -118,14 +130,13 @@
     "email" : "Sandra_Arnold@icloud.us",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 8273.7,
+      "balance" : 8303.626262626263,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
         "cardNumber" : "1952612794872207",
         "status" : "active"
-      } ],
-      "interestRate" : 0.03
+      } ]
     } ]
   }, {
     "firstName" : "Adrian",
@@ -379,8 +390,7 @@
       "balance" : 23500.0,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.97
+      "cards" : [ ]
     }, {
       "IBAN" : "RO65POOB8944016386845896",
       "balance" : 6845.0,
@@ -431,8 +441,7 @@
       "cards" : [ {
         "cardNumber" : "5779026319169555",
         "status" : "active"
-      } ],
-      "interestRate" : 0.4
+      } ]
     } ]
   }, {
     "firstName" : "Sandra",
@@ -440,14 +449,13 @@
     "email" : "Sandra_Arnold@icloud.us",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 8327.7,
+      "balance" : 8357.626262626263,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
         "cardNumber" : "1952612794872207",
         "status" : "active"
-      } ],
-      "interestRate" : 0.03
+      } ]
     } ]
   }, {
     "firstName" : "Adrian",
@@ -595,6 +603,170 @@
   } ],
   "timestamp" : 92
 }, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 93,
+    "description" : "Card not found"
+  },
+  "timestamp" : 93
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 94,
+    "description" : "Card not found"
+  },
+  "timestamp" : 94
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 95,
+    "description" : "Card not found"
+  },
+  "timestamp" : 95
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 96,
+    "description" : "Card not found"
+  },
+  "timestamp" : 96
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 97,
+    "description" : "Card not found"
+  },
+  "timestamp" : 97
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 98,
+    "description" : "Card not found"
+  },
+  "timestamp" : 98
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 99,
+    "description" : "Card not found"
+  },
+  "timestamp" : 99
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 100,
+    "description" : "Card not found"
+  },
+  "timestamp" : 100
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 101,
+    "description" : "Card not found"
+  },
+  "timestamp" : 101
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 102,
+    "description" : "Card not found"
+  },
+  "timestamp" : 102
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 103,
+    "description" : "Card not found"
+  },
+  "timestamp" : 103
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 104,
+    "description" : "Card not found"
+  },
+  "timestamp" : 104
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 105,
+    "description" : "Card not found"
+  },
+  "timestamp" : 105
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 106,
+    "description" : "Card not found"
+  },
+  "timestamp" : 106
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 107,
+    "description" : "Card not found"
+  },
+  "timestamp" : 107
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 108,
+    "description" : "Card not found"
+  },
+  "timestamp" : 108
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 109,
+    "description" : "Card not found"
+  },
+  "timestamp" : 109
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 110,
+    "description" : "Card not found"
+  },
+  "timestamp" : 110
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 111,
+    "description" : "Card not found"
+  },
+  "timestamp" : 111
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 112,
+    "description" : "Card not found"
+  },
+  "timestamp" : 112
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 5,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 20,
+    "description" : "New card created",
+    "card" : "7901879264253296",
+    "cardHolder" : "Leanne_Scott-Davies@yandex.nz",
+    "account" : "RO90POOB5450777208072365"
+  }, {
+    "timestamp" : 27,
+    "description" : "Card payment",
+    "amount" : 16.0,
+    "commerciant" : "Microsoft"
+  }, {
+    "timestamp" : 113,
+    "description" : "New card created",
+    "card" : "0084627535411906",
+    "cardHolder" : "Leanne_Scott-Davies@yandex.nz",
+    "account" : "RO90POOB5450777208072365"
+  } ],
+  "timestamp" : 119
+}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 145,
@@ -735,6 +907,72 @@
   },
   "timestamp" : 164
 }, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 6,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 21,
+    "description" : "New card created",
+    "card" : "7004757825892043",
+    "cardHolder" : "Georgel_Nistor@yandex.ro",
+    "account" : "RO65POOB8944016386845896"
+  }, {
+    "timestamp" : 28,
+    "description" : "Card payment",
+    "amount" : 1915.0,
+    "commerciant" : "Gucci"
+  } ],
+  "timestamp" : 172
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 4,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 19,
+    "description" : "New card created",
+    "card" : "8207906978464446",
+    "cardHolder" : "Selma_Birnbaum@icloud.de",
+    "account" : "RO69POOB6209498372540635"
+  }, {
+    "timestamp" : 26,
+    "description" : "Card payment",
+    "amount" : 49.0,
+    "commerciant" : "HP"
+  }, {
+    "timestamp" : 33,
+    "description" : "Transfer to a Commerzbank savings account",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO19POOB4981055641668812",
+    "amount" : "13.0 EUR",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 34,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 35,
+    "description" : "Booking a trip to the Bavarian Alps",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO30POOB9523423715747796",
+    "amount" : "74.0 EUR",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 37,
+    "description" : "Insufficient funds"
+  } ],
+  "timestamp" : 173
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 41,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 174
+}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Selma",
@@ -782,8 +1020,7 @@
       "balance" : 23500.0,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.97
+      "cards" : [ ]
     }, {
       "IBAN" : "RO65POOB8944016386845896",
       "balance" : 7668.625,
@@ -834,8 +1071,7 @@
       "cards" : [ {
         "cardNumber" : "5779026319169555",
         "status" : "active"
-      } ],
-      "interestRate" : 0.4
+      } ]
     } ]
   }, {
     "firstName" : "Sandra",
@@ -843,14 +1079,13 @@
     "email" : "Sandra_Arnold@icloud.us",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 11353.7,
+      "balance" : 11383.626262626263,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
         "cardNumber" : "1952612794872207",
         "status" : "active"
-      } ],
-      "interestRate" : 0.03
+      } ]
     } ]
   }, {
     "firstName" : "Adrian",

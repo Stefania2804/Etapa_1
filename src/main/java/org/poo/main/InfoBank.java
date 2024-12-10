@@ -1,16 +1,21 @@
 package org.poo.main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class InfoBank {
     private ArrayList<User> users;
     private ArrayList<Account> accounts;
     private ArrayList<Exchange> exchanges;
+    private HashMap<String, String> hashMap;
 
     public InfoBank() {
         users = new ArrayList<>();
         accounts = new ArrayList<>();
         exchanges = new ArrayList<>();
+        hashMap = new HashMap<>();
     }
     public ArrayList<User> getUsers() {
         return users;
@@ -36,6 +41,14 @@ public class InfoBank {
         this.exchanges = exchanges;
     }
 
+    public HashMap<String, String> getHashMap() {
+        return hashMap;
+    }
+
+    public void setHashMap(HashMap<String, String> hashMap) {
+        this.hashMap = hashMap;
+    }
+
     public void addUser(User user) {
         users.add(user);
     }
@@ -48,64 +61,42 @@ public class InfoBank {
     public void deleteFromBank(Account account) {
         accounts.remove(account);
     }
-    public double exchange(String from, String to, double amount) {
+
+    public double recursiveExchange(String from, String to, double amount, Set<String> visited) {
+        if (from.equals(to)) {
+            return amount;
+        }
+
+        visited.add(from);
+
         for (Exchange exchange : exchanges) {
-            if (exchange.getFrom().equals(from) && exchange.getTo().equals(to)) {
-                return amount * exchange.getRate();
+            if (exchange.getFrom().equals(from) && !visited.contains(exchange.getTo())) {
+
+                double newAmount = amount * exchange.getRate();
+                double result = recursiveExchange(exchange.getTo(), to, newAmount, visited);
+                if (result != -1) {
+                    return result;
+                }
             }
-        }
-        for (Exchange inter : exchanges) {
-            if (inter.getFrom().equals(from)) {
 
-                double interAmount = amount * inter.getRate();
-                String interCurrency = inter.getTo();
-
-                for (Exchange finalExchange : exchanges) {
-                    if (finalExchange.getFrom().equals(interCurrency) && finalExchange.getTo().equals(to)) {
-                        return interAmount * finalExchange.getRate();
-                    }
+            if (exchange.getTo().equals(from) && !visited.contains(exchange.getFrom())) {
+                double newAmount = amount / exchange.getRate();
+                double result = recursiveExchange(exchange.getFrom(), to, newAmount, visited);
+                if (result != -1) {
+                    return result;
                 }
             }
         }
-        for (Exchange inter : exchanges) {
-            if (inter.getTo().equals(from)) {
+        return -1;
+    }
 
-                double interAmount = amount / inter.getRate();
-                String interCurrency = inter.getFrom();
+    public double exchange(String from, String to, double amount) {
 
-                for (Exchange finalExchange : exchanges) {
-                    if (finalExchange.getTo().equals(interCurrency) && finalExchange.getFrom().equals(to)) {
-                        return interAmount / finalExchange.getRate();
-                    }
-                }
-            }
-        }
-        for (Exchange inter : exchanges) {
-            if (inter.getTo().equals(from)) {
-
-                double interAmount = amount / inter.getRate();
-                String interCurrency = inter.getFrom();
-
-                for (Exchange finalExchange : exchanges) {
-                    if (finalExchange.getFrom().equals(interCurrency) && finalExchange.getTo().equals(to)) {
-                        return interAmount * finalExchange.getRate();
-                    }
-                }
-            }
-        }
-        for (Exchange inter : exchanges) {
-            if (inter.getFrom().equals(to)) {
-
-                double interAmount = amount * inter.getRate();
-                String interCurrency = inter.getTo();
-
-                for (Exchange finalExchange : exchanges) {
-                    if (finalExchange.getTo().equals(interCurrency) && finalExchange.getFrom().equals(from)) {
-                        return interAmount / finalExchange.getRate();
-                    }
-                }
-            }
-        }
-        return amount;
+        Set<String> visited = new HashSet<>();
+        double result = recursiveExchange(from, to, amount, visited);
+        return result;
+    }
+    public void setAlias(String aliasName, String iban) {
+        hashMap.put(aliasName, iban);
     }
 }

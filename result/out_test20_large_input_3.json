@@ -15,8 +15,7 @@
       "balance" : 2030.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.28
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "John",
@@ -33,8 +32,7 @@
       "balance" : 87133.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.04
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Victoria",
@@ -51,8 +49,7 @@
       "balance" : 1234.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.74
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Luke",
@@ -69,8 +66,7 @@
       "balance" : 52962.0,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.41
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Ryan",
@@ -84,11 +80,10 @@
       "cards" : [ ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 2067.0,
+      "balance" : 2052.909090909091,
       "currency" : "USD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.52
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "David",
@@ -105,8 +100,7 @@
       "balance" : 1388.0,
       "currency" : "NZD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.38
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Arne",
@@ -123,8 +117,7 @@
       "balance" : 2650.6363636363635,
       "currency" : "EUR",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.32
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Liam",
@@ -141,8 +134,7 @@
       "balance" : 13536.0,
       "currency" : "NZD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.39
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Nicolas",
@@ -159,8 +151,7 @@
       "balance" : 9454.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.56
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Roberta",
@@ -177,8 +168,7 @@
       "balance" : 2166.0,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.45
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Jennifer",
@@ -195,8 +185,7 @@
       "balance" : 1912.0,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.57
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Rocio",
@@ -213,8 +202,7 @@
       "balance" : 1311.0,
       "currency" : "MXN",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.42
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Claude",
@@ -231,8 +219,7 @@
       "balance" : 19910.0,
       "currency" : "CAD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.88
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Anouk",
@@ -249,8 +236,7 @@
       "balance" : 8949.0,
       "currency" : "EUR",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.96
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Christophe",
@@ -267,8 +253,7 @@
       "balance" : 21514.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.36
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Renee",
@@ -285,8 +270,7 @@
       "balance" : 2260.0,
       "currency" : "EUR",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.16
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Amadeo",
@@ -303,8 +287,7 @@
       "balance" : 1499.7272727272725,
       "currency" : "EUR",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.87
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Mtro.",
@@ -321,8 +304,7 @@
       "balance" : 1472.0,
       "currency" : "MXN",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.48
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Ernesto",
@@ -339,8 +321,7 @@
       "balance" : 19402.0,
       "currency" : "MXN",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.05
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Justin",
@@ -357,8 +338,7 @@
       "balance" : 2199.0,
       "currency" : "NZD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.37
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Emanuil",
@@ -375,8 +355,7 @@
       "balance" : 2951.454545454545,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.27
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Loic",
@@ -393,8 +372,7 @@
       "balance" : 1643.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.93
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Rodney",
@@ -411,8 +389,7 @@
       "balance" : 1559.0,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.76
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Alfred",
@@ -429,8 +406,7 @@
       "balance" : 1968.181818181818,
       "currency" : "CAD",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.14
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Ronnie",
@@ -447,11 +423,110 @@
       "balance" : 2610.0,
       "currency" : "CHF",
       "type" : "savings",
-      "cards" : [ ],
-      "interestRate" : 0.78
+      "cards" : [ ]
     } ]
   } ],
   "timestamp" : 269
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 26,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 251,
+    "description" : "Electricity and water bills",
+    "senderIBAN" : "RO58POOB7344468893732422",
+    "receiverIBAN" : "RO69POOB6209498372540635",
+    "amount" : "1726.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 252,
+    "description" : "Transfer to a savings account at UBS",
+    "senderIBAN" : "RO58POOB7344468893732422",
+    "receiverIBAN" : "RO75POOB8279679254660818",
+    "amount" : "1740.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 253,
+    "description" : "ZVV pass for public transport",
+    "senderIBAN" : "RO58POOB7344468893732422",
+    "receiverIBAN" : "RO66POOB5231566576817248",
+    "amount" : "474.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 254,
+    "description" : "Weekly shopping from Coop",
+    "senderIBAN" : "RO58POOB7344468893732422",
+    "receiverIBAN" : "RO69POOB6209498372540635",
+    "amount" : "717.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 255,
+    "description" : "Repayment for a mortgage",
+    "senderIBAN" : "RO58POOB7344468893732422",
+    "receiverIBAN" : "RO49POOB4985907300499418",
+    "amount" : "368.0 CHF",
+    "transferType" : "sent"
+  } ],
+  "timestamp" : 371
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 2,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 27,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 256,
+    "description" : "Medical checkup at a private clinic",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO19POOB4981055641668812",
+    "amount" : "474.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 257,
+    "description" : "Tickets for a Swiss football match",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO98POOB7190609943699593",
+    "amount" : "155.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 258,
+    "description" : "Repayment for a mortgage",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO45POOB6505529013808948",
+    "amount" : "572.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 259,
+    "description" : "Tickets for a Swiss football match",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO19POOB5993192794373940",
+    "amount" : "748.0 CHF",
+    "transferType" : "sent"
+  }, {
+    "timestamp" : 260,
+    "description" : "Renewal of a Swisscom subscription",
+    "senderIBAN" : "RO69POOB6209498372540635",
+    "receiverIBAN" : "RO98POOB8412955460158769",
+    "amount" : "90.0 CHF",
+    "transferType" : "sent"
+  } ],
+  "timestamp" : 372
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 25,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 50,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 373
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -475,8 +550,7 @@
       "cards" : [ {
         "cardNumber" : "1733018068262537",
         "status" : "active"
-      } ],
-      "interestRate" : 0.28
+      } ]
     } ]
   }, {
     "firstName" : "John",
@@ -499,8 +573,7 @@
       "cards" : [ {
         "cardNumber" : "9003691654595226",
         "status" : "active"
-      } ],
-      "interestRate" : 0.04
+      } ]
     } ]
   }, {
     "firstName" : "Victoria",
@@ -523,8 +596,7 @@
       "cards" : [ {
         "cardNumber" : "6988686155235949",
         "status" : "active"
-      } ],
-      "interestRate" : 0.74
+      } ]
     } ]
   }, {
     "firstName" : "Luke",
@@ -547,8 +619,7 @@
       "cards" : [ {
         "cardNumber" : "4197210476387198",
         "status" : "active"
-      } ],
-      "interestRate" : 0.41
+      } ]
     } ]
   }, {
     "firstName" : "Ryan",
@@ -556,7 +627,7 @@
     "email" : "Ryan_Waters@gmx.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 36662.0,
+      "balance" : 36674.666666666664,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -565,14 +636,13 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 2162.0,
+      "balance" : 2147.909090909091,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
         "cardNumber" : "5254952026068544",
         "status" : "active"
-      } ],
-      "interestRate" : 0.52
+      } ]
     } ]
   }, {
     "firstName" : "David",
@@ -595,8 +665,7 @@
       "cards" : [ {
         "cardNumber" : "9845444067695487",
         "status" : "active"
-      } ],
-      "interestRate" : 0.38
+      } ]
     } ]
   }, {
     "firstName" : "Arne",
@@ -619,8 +688,7 @@
       "cards" : [ {
         "cardNumber" : "2912280039644439",
         "status" : "active"
-      } ],
-      "interestRate" : 0.32
+      } ]
     } ]
   }, {
     "firstName" : "Liam",
@@ -643,8 +711,7 @@
       "cards" : [ {
         "cardNumber" : "3323341870145976",
         "status" : "active"
-      } ],
-      "interestRate" : 0.39
+      } ]
     } ]
   }, {
     "firstName" : "Nicolas",
@@ -667,8 +734,7 @@
       "cards" : [ {
         "cardNumber" : "4729060187716142",
         "status" : "active"
-      } ],
-      "interestRate" : 0.56
+      } ]
     } ]
   }, {
     "firstName" : "Roberta",
@@ -691,8 +757,7 @@
       "cards" : [ {
         "cardNumber" : "2105131557909283",
         "status" : "active"
-      } ],
-      "interestRate" : 0.45
+      } ]
     } ]
   }, {
     "firstName" : "Jennifer",
@@ -715,8 +780,7 @@
       "cards" : [ {
         "cardNumber" : "2803408755782048",
         "status" : "active"
-      } ],
-      "interestRate" : 0.57
+      } ]
     } ]
   }, {
     "firstName" : "Rocio",
@@ -739,8 +803,7 @@
       "cards" : [ {
         "cardNumber" : "1350474532114313",
         "status" : "active"
-      } ],
-      "interestRate" : 0.42
+      } ]
     } ]
   }, {
     "firstName" : "Claude",
@@ -763,8 +826,7 @@
       "cards" : [ {
         "cardNumber" : "0692077318511511",
         "status" : "active"
-      } ],
-      "interestRate" : 0.88
+      } ]
     } ]
   }, {
     "firstName" : "Anouk",
@@ -787,8 +849,7 @@
       "cards" : [ {
         "cardNumber" : "5715851832459605",
         "status" : "active"
-      } ],
-      "interestRate" : 0.96
+      } ]
     } ]
   }, {
     "firstName" : "Christophe",
@@ -811,8 +872,7 @@
       "cards" : [ {
         "cardNumber" : "4435533800578624",
         "status" : "active"
-      } ],
-      "interestRate" : 0.36
+      } ]
     } ]
   }, {
     "firstName" : "Renee",
@@ -835,8 +895,7 @@
       "cards" : [ {
         "cardNumber" : "8869867531882871",
         "status" : "active"
-      } ],
-      "interestRate" : 0.16
+      } ]
     } ]
   }, {
     "firstName" : "Amadeo",
@@ -859,8 +918,7 @@
       "cards" : [ {
         "cardNumber" : "9295697829422937",
         "status" : "active"
-      } ],
-      "interestRate" : 0.87
+      } ]
     } ]
   }, {
     "firstName" : "Mtro.",
@@ -883,8 +941,7 @@
       "cards" : [ {
         "cardNumber" : "9270641641416871",
         "status" : "active"
-      } ],
-      "interestRate" : 0.48
+      } ]
     } ]
   }, {
     "firstName" : "Ernesto",
@@ -907,8 +964,7 @@
       "cards" : [ {
         "cardNumber" : "8145060794847555",
         "status" : "active"
-      } ],
-      "interestRate" : 0.05
+      } ]
     } ]
   }, {
     "firstName" : "Justin",
@@ -931,8 +987,7 @@
       "cards" : [ {
         "cardNumber" : "0265503381974137",
         "status" : "active"
-      } ],
-      "interestRate" : 0.37
+      } ]
     } ]
   }, {
     "firstName" : "Emanuil",
@@ -955,8 +1010,7 @@
       "cards" : [ {
         "cardNumber" : "2107645074675430",
         "status" : "active"
-      } ],
-      "interestRate" : 0.27
+      } ]
     } ]
   }, {
     "firstName" : "Loic",
@@ -979,8 +1033,7 @@
       "cards" : [ {
         "cardNumber" : "7494576388214516",
         "status" : "active"
-      } ],
-      "interestRate" : 0.93
+      } ]
     } ]
   }, {
     "firstName" : "Rodney",
@@ -1003,8 +1056,7 @@
       "cards" : [ {
         "cardNumber" : "2578053935040541",
         "status" : "active"
-      } ],
-      "interestRate" : 0.76
+      } ]
     } ]
   }, {
     "firstName" : "Alfred",
@@ -1027,8 +1079,7 @@
       "cards" : [ {
         "cardNumber" : "7336596086297955",
         "status" : "active"
-      } ],
-      "interestRate" : 0.14
+      } ]
     } ]
   }, {
     "firstName" : "Ronnie",
@@ -1051,11 +1102,17 @@
       "cards" : [ {
         "cardNumber" : "7678041819946354",
         "status" : "active"
-      } ],
-      "interestRate" : 0.78
+      } ]
     } ]
   } ],
   "timestamp" : 474
+}, {
+  "command" : "checkCardStatus",
+  "output" : {
+    "timestamp" : 480,
+    "description" : "Card not found"
+  },
+  "timestamp" : 480
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -1079,8 +1136,7 @@
       "cards" : [ {
         "cardNumber" : "1733018068262537",
         "status" : "active"
-      } ],
-      "interestRate" : 0.28
+      } ]
     } ]
   }, {
     "firstName" : "John",
@@ -1103,8 +1159,7 @@
       "cards" : [ {
         "cardNumber" : "9003691654595226",
         "status" : "active"
-      } ],
-      "interestRate" : 0.04
+      } ]
     } ]
   }, {
     "firstName" : "Victoria",
@@ -1127,8 +1182,7 @@
       "cards" : [ {
         "cardNumber" : "6988686155235949",
         "status" : "active"
-      } ],
-      "interestRate" : 0.74
+      } ]
     } ]
   }, {
     "firstName" : "Luke",
@@ -1151,8 +1205,7 @@
       "cards" : [ {
         "cardNumber" : "4197210476387198",
         "status" : "active"
-      } ],
-      "interestRate" : 0.41
+      } ]
     } ]
   }, {
     "firstName" : "Ryan",
@@ -1160,7 +1213,7 @@
     "email" : "Ryan_Waters@gmx.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 39043.11111111111,
+      "balance" : 39055.777777777774,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1169,14 +1222,13 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 3016.0,
+      "balance" : 3001.909090909091,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
         "cardNumber" : "5254952026068544",
         "status" : "active"
-      } ],
-      "interestRate" : 0.52
+      } ]
     } ]
   }, {
     "firstName" : "David",
@@ -1199,8 +1251,7 @@
       "cards" : [ {
         "cardNumber" : "9845444067695487",
         "status" : "active"
-      } ],
-      "interestRate" : 0.38
+      } ]
     } ]
   }, {
     "firstName" : "Arne",
@@ -1223,8 +1274,7 @@
       "cards" : [ {
         "cardNumber" : "2912280039644439",
         "status" : "active"
-      } ],
-      "interestRate" : 0.32
+      } ]
     } ]
   }, {
     "firstName" : "Liam",
@@ -1247,8 +1297,7 @@
       "cards" : [ {
         "cardNumber" : "3323341870145976",
         "status" : "active"
-      } ],
-      "interestRate" : 0.39
+      } ]
     } ]
   }, {
     "firstName" : "Nicolas",
@@ -1271,8 +1320,7 @@
       "cards" : [ {
         "cardNumber" : "4729060187716142",
         "status" : "active"
-      } ],
-      "interestRate" : 0.56
+      } ]
     } ]
   }, {
     "firstName" : "Roberta",
@@ -1295,8 +1343,7 @@
       "cards" : [ {
         "cardNumber" : "2105131557909283",
         "status" : "active"
-      } ],
-      "interestRate" : 0.45
+      } ]
     } ]
   }, {
     "firstName" : "Jennifer",
@@ -1319,8 +1366,7 @@
       "cards" : [ {
         "cardNumber" : "2803408755782048",
         "status" : "active"
-      } ],
-      "interestRate" : 0.57
+      } ]
     } ]
   }, {
     "firstName" : "Rocio",
@@ -1343,8 +1389,7 @@
       "cards" : [ {
         "cardNumber" : "1350474532114313",
         "status" : "active"
-      } ],
-      "interestRate" : 0.42
+      } ]
     } ]
   }, {
     "firstName" : "Claude",
@@ -1367,8 +1412,7 @@
       "cards" : [ {
         "cardNumber" : "0692077318511511",
         "status" : "active"
-      } ],
-      "interestRate" : 0.88
+      } ]
     } ]
   }, {
     "firstName" : "Anouk",
@@ -1391,8 +1435,7 @@
       "cards" : [ {
         "cardNumber" : "5715851832459605",
         "status" : "active"
-      } ],
-      "interestRate" : 0.96
+      } ]
     } ]
   }, {
     "firstName" : "Christophe",
@@ -1415,8 +1458,7 @@
       "cards" : [ {
         "cardNumber" : "4435533800578624",
         "status" : "active"
-      } ],
-      "interestRate" : 0.36
+      } ]
     } ]
   }, {
     "firstName" : "Renee",
@@ -1439,8 +1481,7 @@
       "cards" : [ {
         "cardNumber" : "8869867531882871",
         "status" : "active"
-      } ],
-      "interestRate" : 0.16
+      } ]
     } ]
   }, {
     "firstName" : "Amadeo",
@@ -1463,8 +1504,7 @@
       "cards" : [ {
         "cardNumber" : "9295697829422937",
         "status" : "active"
-      } ],
-      "interestRate" : 0.87
+      } ]
     } ]
   }, {
     "firstName" : "Mtro.",
@@ -1487,8 +1527,7 @@
       "cards" : [ {
         "cardNumber" : "9270641641416871",
         "status" : "active"
-      } ],
-      "interestRate" : 0.48
+      } ]
     } ]
   }, {
     "firstName" : "Ernesto",
@@ -1511,8 +1550,7 @@
       "cards" : [ {
         "cardNumber" : "8145060794847555",
         "status" : "active"
-      } ],
-      "interestRate" : 0.05
+      } ]
     } ]
   }, {
     "firstName" : "Justin",
@@ -1535,8 +1573,7 @@
       "cards" : [ {
         "cardNumber" : "0265503381974137",
         "status" : "active"
-      } ],
-      "interestRate" : 0.37
+      } ]
     } ]
   }, {
     "firstName" : "Emanuil",
@@ -1559,8 +1596,7 @@
       "cards" : [ {
         "cardNumber" : "2107645074675430",
         "status" : "active"
-      } ],
-      "interestRate" : 0.27
+      } ]
     } ]
   }, {
     "firstName" : "Loic",
@@ -1583,8 +1619,7 @@
       "cards" : [ {
         "cardNumber" : "7494576388214516",
         "status" : "active"
-      } ],
-      "interestRate" : 0.93
+      } ]
     } ]
   }, {
     "firstName" : "Rodney",
@@ -1607,8 +1642,7 @@
       "cards" : [ {
         "cardNumber" : "2578053935040541",
         "status" : "active"
-      } ],
-      "interestRate" : 0.76
+      } ]
     } ]
   }, {
     "firstName" : "Alfred",
@@ -1631,8 +1665,7 @@
       "cards" : [ {
         "cardNumber" : "7336596086297955",
         "status" : "active"
-      } ],
-      "interestRate" : 0.14
+      } ]
     } ]
   }, {
     "firstName" : "Ronnie",
@@ -1655,8 +1688,7 @@
       "cards" : [ {
         "cardNumber" : "7678041819946354",
         "status" : "active"
-      } ],
-      "interestRate" : 0.78
+      } ]
     } ]
   } ],
   "timestamp" : 642
