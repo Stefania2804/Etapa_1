@@ -95,7 +95,7 @@
     "email" : "Andre_Martin@gmail.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 495.33333333333326,
+      "balance" : 495.3333333333334,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -126,7 +126,7 @@
   }, {
     "timestamp" : 21,
     "description" : "Card payment",
-    "amount" : 346.66666666666674,
+    "amount" : 346.6666666666666,
     "commerciant" : "KFC"
   }, {
     "timestamp" : 23,

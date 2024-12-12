@@ -1,5 +1,7 @@
 package org.poo.main;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -68,20 +70,24 @@ public class InfoBank {
         }
 
         visited.add(from);
-
+        MathContext precision = new MathContext(16);
         for (Exchange exchange : exchanges) {
             if (exchange.getFrom().equals(from) && !visited.contains(exchange.getTo())) {
+                BigDecimal rate = new BigDecimal(exchange.getRate(), precision);
+                BigDecimal newAmount = new BigDecimal(amount, precision).multiply(rate, precision);
 
-                double newAmount = amount * exchange.getRate();
-                double result = recursiveExchange(exchange.getTo(), to, newAmount, visited);
+                double result = recursiveExchange(exchange.getTo(), to, newAmount.doubleValue(), visited);
                 if (result != -1) {
                     return result;
                 }
             }
 
+            // Cazul în care se face împărțirea
             if (exchange.getTo().equals(from) && !visited.contains(exchange.getFrom())) {
-                double newAmount = amount / exchange.getRate();
-                double result = recursiveExchange(exchange.getFrom(), to, newAmount, visited);
+                BigDecimal rate = new BigDecimal(exchange.getRate(), precision);
+                BigDecimal newAmount = new BigDecimal(amount, precision).divide(rate, precision);
+
+                double result = recursiveExchange(exchange.getFrom(), to, newAmount.doubleValue(), visited);
                 if (result != -1) {
                     return result;
                 }

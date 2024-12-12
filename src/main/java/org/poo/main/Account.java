@@ -17,7 +17,10 @@ public class Account implements Visitable{
     private ArrayList<Card> cards;
     @JsonIgnore
     private double minBalance;
-
+    @JsonIgnore
+    private ArrayList<Transaction> transactions;
+    @JsonIgnore
+    private List<Commerciant> commerciants;
     public Account(final String iban, final double balance, final String currency,
                    final String type) {
         this.iban = iban;
@@ -26,6 +29,8 @@ public class Account implements Visitable{
         this.type = type;
         this.cards = new ArrayList<>();
         minBalance = 0.0;
+        transactions = new ArrayList<>();
+        commerciants = new ArrayList<>();
     }
     /**
      * Getter pentru iban.
@@ -90,6 +95,23 @@ public class Account implements Visitable{
     public void setType(final String type) {
         this.type = type;
     }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public List<Commerciant> getCommerciants() {
+        return commerciants;
+    }
+
+    public void setCommerciants(List<Commerciant> commerciants) {
+        this.commerciants = commerciants;
+    }
+
     /**
      * Getter pentru cardurile asociate contului.
      *
@@ -122,5 +144,10 @@ public class Account implements Visitable{
     public void deleteCard(final Card card) {
         cards.remove(card);
     }
-
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+    }
+    public void addCommerciant(Commerciant commerciant) {
+        commerciants.add(commerciant);
+    }
 }

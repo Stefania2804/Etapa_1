@@ -63,7 +63,7 @@
     "email" : "Carla_Valencia@yahoo.us",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 506.33333333333337,
+      "balance" : 506.33333333333326,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]

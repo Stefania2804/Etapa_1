@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.fileio.CommandInput;
-import org.poo.fileio.ObjectInput;
 
 public abstract class JsonOutput {
     /**
@@ -82,6 +81,90 @@ public abstract class JsonOutput {
         ObjectNode outputNode = objectMapper.createObjectNode();
         outputNode.put("error", "Account couldn't be deleted - see org.poo.transactions for details");
         outputNode.put("timestamp", commandInput.getTimestamp());
+
+        commandNode.set("output", outputNode);
+        commandNode.put("timestamp", commandInput.getTimestamp());
+        output.add(commandNode);
+    }
+    public static void printClassicReport(CommandInput commandInput, Account account, ObjectMapper objectMapper, ArrayNode output) {
+        ObjectNode commandNode = objectMapper.createObjectNode();
+        commandNode.put("command", "report");
+
+        ObjectNode outputNode = objectMapper.createObjectNode();
+        outputNode.put("IBAN", account.getIban());
+        outputNode.put("balance", account.getBalance());
+        outputNode.put("currency", account.getCurrency());
+
+        ArrayNode transactionsArray = objectMapper.createArrayNode();
+        for (Transaction transaction : account.getTransactions()) {
+            if (transaction.getTimestamp() >= commandInput.getStartTimestamp()
+                    && transaction.getTimestamp() <= commandInput.getEndTimestamp()) {
+                transactionsArray.add(objectMapper.valueToTree(transaction));
+            }
+        }
+
+        outputNode.set("transactions", transactionsArray);
+
+        commandNode.set("output", outputNode);
+        commandNode.put("timestamp", commandInput.getTimestamp());
+
+        output.add(commandNode);
+    }
+    public static void interestRateError(CommandInput commandInput, ObjectMapper objectMapper, ArrayNode output) {
+        ObjectNode commandNode = objectMapper.createObjectNode();
+        commandNode.put("command", commandInput.getCommand());
+        ObjectNode outputNode = objectMapper.createObjectNode();
+        outputNode.put("timestamp", commandInput.getTimestamp());
+        outputNode.put("description", "This is not a savings account");
+
+        commandNode.set("output", outputNode);
+        commandNode.put("timestamp", commandInput.getTimestamp());
+        output.add(commandNode);
+    }
+    public static void printSpendingsReport(CommandInput commandInput, Account account, ObjectMapper objectMapper, ArrayNode output) {
+        ObjectNode commandNode = objectMapper.createObjectNode();
+        commandNode.put("command", "spendingsReport");
+
+        ObjectNode outputNode = objectMapper.createObjectNode();
+        outputNode.put("IBAN", account.getIban());
+        outputNode.put("balance", account.getBalance());
+        outputNode.put("currency", account.getCurrency());
+
+        ArrayNode transactionsArray = objectMapper.createArrayNode();
+        ArrayNode commerciantsArray = objectMapper.createArrayNode();
+        for (Transaction transaction : account.getTransactions()) {
+            if (transaction.getDescription().equals("Card payment")
+                    && transaction.getTimestamp() >= commandInput.getStartTimestamp()
+                    && transaction.getTimestamp() <= commandInput.getEndTimestamp()) {
+                transactionsArray.add(objectMapper.valueToTree(transaction));
+            }
+        }
+        for (Commerciant commerciant : account.getCommerciants()) {
+            if (commerciant.getPayOnlineTimestamp() >= commandInput.getStartTimestamp()
+                    && commerciant.getPayOnlineTimestamp() <= commandInput.getEndTimestamp()) {
+                commerciantsArray.add(objectMapper.valueToTree(commerciant));
+            }
+        }
+        outputNode.set("transactions", transactionsArray);
+        outputNode.set("commerciants", commerciantsArray);
+
+        commandNode.set("output", outputNode);
+        commandNode.put("timestamp", commandInput.getTimestamp());
+
+        output.add(commandNode);
+        for (Commerciant commerciant : account.getCommerciants()) {
+            if (commerciant.getPayOnlineTimestamp() >= commandInput.getStartTimestamp()
+                    && commerciant.getPayOnlineTimestamp() <= commandInput.getEndTimestamp()) {
+                commerciant.setAmount(0.0);
+            }
+        }
+    }
+    public static void errorAccount(CommandInput commandInput, ObjectMapper objectMapper, ArrayNode output) {
+        ObjectNode commandNode = objectMapper.createObjectNode();
+        commandNode.put("command", commandInput.getCommand());
+        ObjectNode outputNode = objectMapper.createObjectNode();
+        outputNode.put("timestamp", commandInput.getTimestamp());
+        outputNode.put("description", "Account not found");
 
         commandNode.set("output", outputNode);
         commandNode.put("timestamp", commandInput.getTimestamp());

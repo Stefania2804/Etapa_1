@@ -15,4 +15,20 @@ public class OnlinePayTransaction extends Transaction {
         this.amount = amount;
         this.commerciant = commerciant;
     }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getCommerciant() {
+        return commerciant;
+    }
+
+    public void setCommerciant(String commerciant) {
+        this.commerciant = commerciant;
+    }
 }
