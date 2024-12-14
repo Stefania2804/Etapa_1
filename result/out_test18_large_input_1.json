@@ -1794,13 +1794,6 @@
   "command" : "deleteAccount",
   "output" : {
     "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 175
-  },
-  "timestamp" : 175
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 176
   },
   "timestamp" : 176
@@ -1857,30 +1850,9 @@
   "command" : "deleteAccount",
   "output" : {
     "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 183
-  },
-  "timestamp" : 183
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 184
   },
   "timestamp" : 184
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 184
-  },
-  "timestamp" : 184
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 185
-  },
-  "timestamp" : 185
 }, {
   "command" : "deleteAccount",
   "output" : {
@@ -1899,30 +1871,9 @@
   "command" : "deleteAccount",
   "output" : {
     "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 186
-  },
-  "timestamp" : 186
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 187
   },
   "timestamp" : 187
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 187
-  },
-  "timestamp" : 187
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 188
-  },
-  "timestamp" : 188
 }, {
   "command" : "deleteAccount",
   "output" : {
@@ -1941,20 +1892,6 @@
   "command" : "deleteAccount",
   "output" : {
     "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 189
-  },
-  "timestamp" : 189
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 190
-  },
-  "timestamp" : 190
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 190
   },
   "timestamp" : 190
@@ -1969,30 +1906,9 @@
   "command" : "deleteAccount",
   "output" : {
     "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 191
-  },
-  "timestamp" : 191
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
     "timestamp" : 192
   },
   "timestamp" : 192
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 192
-  },
-  "timestamp" : 192
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 193
-  },
-  "timestamp" : 193
 }, {
   "command" : "deleteAccount",
   "output" : {

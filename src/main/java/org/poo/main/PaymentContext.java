@@ -1,13 +1,19 @@
 package org.poo.main;
 
+import org.poo.account.Account;
+
 public class PaymentContext {
     private PayStrategy strategy;
 
-    public PaymentContext(PayStrategy strategy) {
+    public PaymentContext(final PayStrategy strategy) {
         this.strategy = strategy;
     }
-
-    public void executePayment(Account account, double amount) {
+    /**
+     * Se face plata printr-o anumita metoda.
+     *
+     */
+    public void executePayment(final Account account,
+                               final double amount) {
         strategy.pay(account, amount);
     }
 }

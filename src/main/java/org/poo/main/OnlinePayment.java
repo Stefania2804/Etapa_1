@@ -1,5 +1,7 @@
 package org.poo.main;
 
+import org.poo.account.Account;
+
 public final class OnlinePayment implements PayStrategy {
 
     @Override

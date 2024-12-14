@@ -11,7 +11,8 @@ public final class Commerciant {
     @JsonProperty("total")
     private double amount;
 
-    public Commerciant (double amount, String name, int payOnlineTimestamp) {
+    public Commerciant(final double amount, final String name,
+                        final int payOnlineTimestamp) {
         this.amount = amount;
         this.name = name;
         this.payOnlineTimestamp = payOnlineTimestamp;
@@ -21,7 +22,7 @@ public final class Commerciant {
         return payOnlineTimestamp;
     }
 
-    public void setPayOnlineTimestamp(int payOnlineTimestamp) {
+    public void setPayOnlineTimestamp(final int payOnlineTimestamp) {
         this.payOnlineTimestamp = payOnlineTimestamp;
     }
 
@@ -29,7 +30,7 @@ public final class Commerciant {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(final double amount) {
         this.amount = amount;
     }
 
@@ -37,7 +38,7 @@ public final class Commerciant {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 }

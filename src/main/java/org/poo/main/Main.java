@@ -3,7 +3,6 @@ package org.poo.main;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.checker.Checker;
 import org.poo.checker.CheckerConstants;
 import org.poo.fileio.CommandInput;
@@ -83,7 +82,8 @@ public final class Main {
         UserInput[] users = inputData.getUsers();
         ExchangeInput[] exchangeRates = inputData.getExchangeRates();
         for (int i = 0; i < users.length; i++) {
-            User user = new User(users[i].getFirstName(), users[i].getLastName(), users[i].getEmail());
+            User user = new User(users[i].getFirstName(),
+                    users[i].getLastName(), users[i].getEmail());
             infoBank.addUser(user);
         }
         for (int i = 0; i < exchangeRates.length; i++) {

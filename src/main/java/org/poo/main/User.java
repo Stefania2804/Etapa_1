@@ -1,8 +1,12 @@
 package org.poo.main;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.poo.account.Account;
+import org.poo.account.Classic;
+import org.poo.account.Savings;
+import org.poo.transactions.Transaction;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public final class User {
@@ -10,10 +14,10 @@ public final class User {
     private String lastName;
     private String email;
     @JsonIgnore
-    private ArrayList<Classic> classics;
+    private List<Classic> classics;
     @JsonIgnore
-    private ArrayList<Savings> savings;
-    private ArrayList<Account> accounts;
+    private List<Savings> savings;
+    private List<Account> accounts;
     @JsonIgnore
     private List<Transaction> transactions;
 
@@ -51,27 +55,27 @@ public final class User {
         this.lastName = lastName;
     }
 
-    public ArrayList<Classic> getClassics() {
+    public List<Classic> getClassics() {
         return classics;
     }
 
-    public void setClassics(ArrayList<Classic> classics) {
+    public void setClassics(final List<Classic> classics) {
         this.classics = classics;
     }
 
-    public ArrayList<Savings> getSavings() {
+    public List<Savings> getSavings() {
         return savings;
     }
 
-    public void setSavings(final ArrayList<Savings> savings) {
+    public void setSavings(final List<Savings> savings) {
         this.savings = savings;
     }
 
-    public ArrayList<Account> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(final ArrayList<Account> accounts) {
+    public void setAccounts(final List<Account> accounts) {
         this.accounts = accounts;
     }
 
@@ -79,19 +83,34 @@ public final class User {
         return transactions;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(final List<Transaction> transactions) {
         this.transactions = transactions;
     }
-
+    /**
+     * Adauga un cont clasic nou pentru utilizator.
+     *
+     */
     public void addClassic(final Classic account) {
         classics.add(account);
     }
+    /**
+     * Adauga un cont de economii.
+     *
+     */
     public void addSavings(final Savings account) {
         savings.add(account);
     }
+    /**
+     * Adauga un cont oarecare.
+     *
+     */
     public void addAccounts(final Account account) {
         accounts.add(account);
     }
+    /**
+     * Sterge un cont.
+     *
+     */
     public void deleteFromUser(final Account account) {
         accounts.remove(account);
         if (account.getClass() == Savings.class) {
@@ -102,8 +121,11 @@ public final class User {
             classics.remove(account);
         }
     }
-
-    public void addTransaction(Transaction transaction) {
+    /**
+     * Adauga o tranzactie facuta de utilizator.
+     *
+     */
+    public void addTransaction(final Transaction transaction) {
         transactions.add(transaction);
     }
 }

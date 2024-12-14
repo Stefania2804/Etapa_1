@@ -3,7 +3,9 @@ package org.poo.main;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.poo.account.Account;
 import org.poo.fileio.CommandInput;
+import org.poo.transactions.Transaction;
 
 public abstract class JsonOutput {
     /**
@@ -75,18 +77,32 @@ public abstract class JsonOutput {
         commandNode.put("timestamp", commandInput.getTimestamp());
         output.add(commandNode);
     }
-    public static void deleteAccountError(CommandInput commandInput, ObjectMapper objectMapper, ArrayNode output) {
+    /**
+     * Afiseaza eroare la stergerea unui cont cu balanta diferita de 0.
+     *
+     */
+    public static void deleteAccountError(final CommandInput commandInput,
+                                          final ObjectMapper objectMapper,
+                                          final ArrayNode output) {
         ObjectNode commandNode = objectMapper.createObjectNode();
         commandNode.put("command", "deleteAccount");
         ObjectNode outputNode = objectMapper.createObjectNode();
-        outputNode.put("error", "Account couldn't be deleted - see org.poo.transactions for details");
+        outputNode.put("error", "Account couldn't be deleted "
+                + "- see org.poo.transactions for details");
         outputNode.put("timestamp", commandInput.getTimestamp());
 
         commandNode.set("output", outputNode);
         commandNode.put("timestamp", commandInput.getTimestamp());
         output.add(commandNode);
     }
-    public static void printClassicReport(CommandInput commandInput, Account account, ObjectMapper objectMapper, ArrayNode output) {
+    /**
+     * Printeaza raportul clasic.
+     *
+     */
+    public static void printClassicReport(final CommandInput commandInput,
+                                          final Account account,
+                                          final ObjectMapper objectMapper,
+                                          final ArrayNode output) {
         ObjectNode commandNode = objectMapper.createObjectNode();
         commandNode.put("command", "report");
 
@@ -110,7 +126,13 @@ public abstract class JsonOutput {
 
         output.add(commandNode);
     }
-    public static void interestRateError(CommandInput commandInput, ObjectMapper objectMapper, ArrayNode output) {
+    /**
+     * Doar contul de economii poate avea dobanda.
+     *
+     */
+    public static void interestRateError(final CommandInput commandInput,
+                                         final ObjectMapper objectMapper,
+                                         final ArrayNode output) {
         ObjectNode commandNode = objectMapper.createObjectNode();
         commandNode.put("command", commandInput.getCommand());
         ObjectNode outputNode = objectMapper.createObjectNode();
@@ -121,7 +143,14 @@ public abstract class JsonOutput {
         commandNode.put("timestamp", commandInput.getTimestamp());
         output.add(commandNode);
     }
-    public static void printSpendingsReport(CommandInput commandInput, Account account, ObjectMapper objectMapper, ArrayNode output) {
+    /**
+     * Printeaza raportul de cheltuieli al unui cont.
+     *
+     */
+    public static void printSpendingsReport(final CommandInput commandInput,
+                                            final Account account,
+                                            final ObjectMapper objectMapper,
+                                            final ArrayNode output) {
         ObjectNode commandNode = objectMapper.createObjectNode();
         commandNode.put("command", "spendingsReport");
 
@@ -159,12 +188,36 @@ public abstract class JsonOutput {
             }
         }
     }
-    public static void errorAccount(CommandInput commandInput, ObjectMapper objectMapper, ArrayNode output) {
+    /**
+     * Eroare pentru cont inexistent.
+     *
+     */
+    public static void errorAccount(final CommandInput commandInput,
+                                    final ObjectMapper objectMapper,
+                                    final ArrayNode output) {
         ObjectNode commandNode = objectMapper.createObjectNode();
         commandNode.put("command", commandInput.getCommand());
         ObjectNode outputNode = objectMapper.createObjectNode();
         outputNode.put("timestamp", commandInput.getTimestamp());
         outputNode.put("description", "Account not found");
+
+        commandNode.set("output", outputNode);
+        commandNode.put("timestamp", commandInput.getTimestamp());
+        output.add(commandNode);
+    }
+    /**
+     * Eroare pentru raport de cheltuieli cerut pentru un cont de
+     * economii.
+     *
+     */
+    public static void errorSpendings(final CommandInput commandInput,
+                                      final ObjectMapper objectMapper,
+                                      final ArrayNode output) {
+        ObjectNode commandNode = objectMapper.createObjectNode();
+        commandNode.put("command", commandInput.getCommand());
+
+        ObjectNode outputNode = objectMapper.createObjectNode();
+        outputNode.put("error", "This kind of report is not supported for a saving account");
 
         commandNode.set("output", outputNode);
         commandNode.put("timestamp", commandInput.getTimestamp());

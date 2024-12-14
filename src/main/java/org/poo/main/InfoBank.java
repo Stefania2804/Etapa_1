@@ -1,16 +1,15 @@
 package org.poo.main;
 
+import org.poo.account.Account;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class InfoBank {
-    private ArrayList<User> users;
-    private ArrayList<Account> accounts;
-    private ArrayList<Exchange> exchanges;
+public final class InfoBank {
+    private List<User> users;
+    private List<Account> accounts;
+    private List<Exchange> exchanges;
     private HashMap<String, String> hashMap;
 
     public InfoBank() {
@@ -19,27 +18,27 @@ public class InfoBank {
         exchanges = new ArrayList<>();
         hashMap = new HashMap<>();
     }
-    public ArrayList<User> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(ArrayList<User> users) {
+    public void setUsers(final ArrayList<User> users) {
         this.users = users;
     }
 
-    public ArrayList<Account> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(ArrayList<Account> accounts) {
+    public void setAccounts(final ArrayList<Account> accounts) {
         this.accounts = accounts;
     }
 
-    public ArrayList<Exchange> getExchanges() {
+    public List<Exchange> getExchanges() {
         return exchanges;
     }
 
-    public void setExchanges(ArrayList<Exchange> exchanges) {
+    public void setExchanges(final List<Exchange> exchanges) {
         this.exchanges = exchanges;
     }
 
@@ -47,24 +46,45 @@ public class InfoBank {
         return hashMap;
     }
 
-    public void setHashMap(HashMap<String, String> hashMap) {
+    public void setHashMap(final HashMap<String, String> hashMap) {
         this.hashMap = hashMap;
     }
-
-    public void addUser(User user) {
+    /**
+     * Adauga un client nou al bancii.
+     *
+     */
+    public void addUser(final User user) {
         users.add(user);
     }
-    public void addAccount(Account account) {
+    /**
+     * Adauga un cont nou deschis la banca.
+     *
+     */
+    public void addAccount(final Account account) {
         accounts.add(account);
     }
-    public void addExchange(Exchange exchange) {
+    /**
+     * Adauga un nou curs valutar disponibil.
+     *
+     */
+    public void addExchange(final Exchange exchange) {
         exchanges.add(exchange);
     }
-    public void deleteFromBank(Account account) {
+    /**
+     * Sterge un cont deschis la banca.
+     *
+     */
+    public void deleteFromBank(final Account account) {
         accounts.remove(account);
     }
 
-    public double recursiveExchange(String from, String to, double amount, Set<String> visited) {
+    /**
+     * Functie recursiva schimb valutar.
+     *
+     */
+    public double recursiveExchange(final String from, final String to,
+                                    final double amount,
+                                    final Set<String> visited) {
         if (from.equals(to)) {
             return amount;
         }
@@ -76,18 +96,18 @@ public class InfoBank {
                 BigDecimal rate = new BigDecimal(exchange.getRate(), precision);
                 BigDecimal newAmount = new BigDecimal(amount, precision).multiply(rate, precision);
 
-                double result = recursiveExchange(exchange.getTo(), to, newAmount.doubleValue(), visited);
+                double result = recursiveExchange(exchange.getTo(),
+                        to, newAmount.doubleValue(), visited);
                 if (result != -1) {
                     return result;
                 }
             }
-
-            // Cazul în care se face împărțirea
             if (exchange.getTo().equals(from) && !visited.contains(exchange.getFrom())) {
                 BigDecimal rate = new BigDecimal(exchange.getRate(), precision);
                 BigDecimal newAmount = new BigDecimal(amount, precision).divide(rate, precision);
 
-                double result = recursiveExchange(exchange.getFrom(), to, newAmount.doubleValue(), visited);
+                double result = recursiveExchange(exchange.getFrom(), to,
+                        newAmount.doubleValue(), visited);
                 if (result != -1) {
                     return result;
                 }
@@ -95,14 +115,23 @@ public class InfoBank {
         }
         return -1;
     }
-
-    public double exchange(String from, String to, double amount) {
+    /**
+     * Schimb valutar intre doua monede.
+     *
+     */
+    public double exchange(final String from, final String to,
+                           final double amount) {
 
         Set<String> visited = new HashSet<>();
         double result = recursiveExchange(from, to, amount, visited);
         return result;
     }
-    public void setAlias(String aliasName, String iban) {
+    /**
+     * Setarea unui alias.
+     *
+     */
+    public void setAlias(final String aliasName,
+                         final String iban) {
         hashMap.put(aliasName, iban);
     }
 }

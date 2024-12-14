@@ -1,4 +1,4 @@
-package org.poo.main;
+package org.poo.transactions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -10,23 +10,36 @@ public class Transaction {
     @JsonProperty("description")
     private String description;
 
-    public Transaction(int timestamp, String description) {
+    public Transaction(final int timestamp, final String description) {
         this.timestamp = timestamp;
         this.description = description;
     }
+    /**
+     * Getter pentru timestamp-ul tranzactiei.
+     *
+     */
     public int getTimestamp() {
         return timestamp;
     }
-
-    public void setTimestamp(int timestamp) {
+    /**
+     * Setter pentru timestamp.
+     *
+     */
+    public void setTimestamp(final int timestamp) {
         this.timestamp = timestamp;
     }
-
+    /**
+     * Getter pentru descrierea tranzactiei.
+     *
+     */
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
+    /**
+     * Setter pentru descriere.
+     *
+     */
+    public void setDescription(final String description) {
         this.description = description;
     }
 }

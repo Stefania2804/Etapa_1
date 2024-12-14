@@ -1,12 +1,13 @@
 package org.poo.main;
 
-public class Exchange {
+public final class Exchange {
     private String from;
     private String to;
     private double rate;
     private int timestamp;
 
-    public Exchange(String from, String to, double rate, int timestamp) {
+    public Exchange(final String from, final String to,
+                    final double rate, final int timestamp) {
         this.from = from;
         this.to = to;
         this.rate = rate;
@@ -17,7 +18,7 @@ public class Exchange {
         return from;
     }
 
-    public void setFrom(String from) {
+    public void setFrom(final String from) {
         this.from = from;
     }
 
@@ -25,7 +26,7 @@ public class Exchange {
         return to;
     }
 
-    public void setTo(String to) {
+    public void setTo(final String to) {
         this.to = to;
     }
 
@@ -33,7 +34,7 @@ public class Exchange {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(final double rate) {
         this.rate = rate;
     }
 
@@ -41,7 +42,7 @@ public class Exchange {
         return timestamp;
     }
 
-    public void setTimestamp(int timestamp) {
+    public void setTimestamp(final int timestamp) {
         this.timestamp = timestamp;
     }
 }

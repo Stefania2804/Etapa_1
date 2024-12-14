@@ -3,10 +3,18 @@ package org.poo.main;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
+import org.poo.account.Account;
+import org.poo.account.Classic;
+import org.poo.account.Savings;
+import org.poo.account.card.Card;
+import org.poo.account.card.NormalCard;
+import org.poo.account.card.OneTimeCard;
+import org.poo.errorTransactions.DeleteAccountErrorTransaction;
+import org.poo.errorTransactions.ErrorPaymentTransaction;
+import org.poo.errorTransactions.ErrorSplitPaymentTransaction;
 import org.poo.fileio.CommandInput;
+import org.poo.transactions.*;
 import org.poo.utils.Utils;
-
-import java.util.Arrays;
 import java.util.Locale;
 
 public abstract class Actions {
@@ -25,14 +33,14 @@ public abstract class Actions {
                     String email = commandInput.getEmail();
                     for (User user : infoBank.getUsers()) {
                         if (user.getEmail().equals(email)) {
-                            Transaction transaction = new NewAccTransaction
-                                    (commandInput.getTimestamp(),
+                            Transaction transaction = new NewAccTransaction(
+                                    commandInput.getTimestamp(),
                                     "New account created");
                             user.addTransaction(transaction);
                             String currency = commandInput.getCurrency();
                             String type = commandInput.getAccountType();
                             String iban = Utils.generateIBAN();
-                            switch(type) {
+                            switch (type) {
                                 case "classic":
                                     Account classic = new Classic(iban, 0.0, currency, type);
                                     user.addClassic((Classic) classic);
@@ -76,7 +84,8 @@ public abstract class Actions {
                                     String cardNumber = Utils.generateCardNumber();
                                     Card card = new NormalCard(cardNumber, "active");
                                     accs.addCard(card);
-                                    Transaction transaction = new NewCardTransaction(commandInput.getTimestamp(),
+                                    Transaction transaction = new
+                                            NewCardTransaction(commandInput.getTimestamp(),
                                             "New card created",
                                             cardNumber, userEmail, ibanAcc);
                                     user.addTransaction(transaction);
@@ -104,7 +113,8 @@ public abstract class Actions {
                                     String cardNumber = Utils.generateCardNumber();
                                     Card card = new OneTimeCard(cardNumber, "active");
                                     accs.addCard(card);
-                                    Transaction transaction = new NewCardTransaction(commandInput.getTimestamp(),
+                                    Transaction transaction = new
+                                            NewCardTransaction(commandInput.getTimestamp(),
                                             "New card created",
                                             cardNumber, userEmailOneTime, ibanAccOnetime);
                                     user.addTransaction(transaction);
@@ -128,11 +138,14 @@ public abstract class Actions {
                                     JsonOutput.deleteAccount(commandInput, objectMapper, output);
                                     break;
                                 } else {
-                                    Transaction transaction = new DeleteAccountErrorTransaction(commandInput.getTimestamp(),
-                                            "Account couldn't be deleted - there are funds remaining");
+                                    Transaction transaction = new
+                                            DeleteAccountErrorTransaction(commandInput.getTimestamp(),
+                                            "Account couldn't be deleted - "
+                                                    + "there are funds remaining");
                                     user.addTransaction(transaction);
                                     accs.addTransaction(transaction);
                                     JsonOutput.deleteAccountError(commandInput, objectMapper, output);
+                                    break;
                                 }
                             }
                         }
@@ -146,7 +159,8 @@ public abstract class Actions {
                                 if (card.getCardNumber().equals(cardNumber)) {
                                     account.deleteCard(card);
                                     Transaction transaction = new DeleteCardTransaction(commandInput.getTimestamp(),
-                                            "The card has been destroyed", cardNumber, user.getEmail(), account.getIban());
+                                            "The card has been destroyed",
+                                            cardNumber, user.getEmail(), account.getIban());
                                     user.addTransaction(transaction);
                                     account.addTransaction(transaction);
                                     break;
@@ -172,8 +186,10 @@ public abstract class Actions {
                             for (Card card : account.getCards()) {
                                 if (card.getCardNumber().equals(commandInput.getCardNumber())) {
                                     if (account.getBalance() <= account.getMinBalance()) {
-                                        Transaction transaction = new CardStatusTransaction(commandInput.getTimestamp(),
-                                        "You have reached the minimum amount of funds, the card will be frozen");
+                                        Transaction transaction = new CardStatusTransaction(
+                                                commandInput.getTimestamp(),
+                                        "You have reached the minimum amount of "
+                                                + "funds, the card will be frozen");
                                         user.addTransaction(transaction);
                                         card.setStatus("frozen");
                                         account.addTransaction(transaction);
@@ -199,7 +215,8 @@ public abstract class Actions {
                                 for (Card card : account.getCards()) {
                                     if (card.getCardNumber().equals(payOnlineCard)) {
                                         if (card.getStatus().equals("frozen")) {
-                                            Transaction transaction = new ErrorPaymentTransaction(commandInput.getTimestamp(),
+                                            Transaction transaction = new ErrorPaymentTransaction(
+                                                    commandInput.getTimestamp(),
                                                     "The card is frozen");
                                             user.addTransaction(transaction);
                                             account.addTransaction(transaction);
@@ -213,24 +230,35 @@ public abstract class Actions {
                                         }
                                         if (enoughFunds == 1 && card.getStatus().equals("active")) {
                                             context.executePayment(account, amount);
-                                            if (card.getClass() == OneTimeCard.class) {
-                                                card.setCardNumber(Utils.generateCardNumber());
-                                            }
                                             Transaction transaction = new OnlinePayTransaction(commandInput.getTimestamp(),
                                                     "Card payment", amount, commandInput.getCommerciant());
                                             user.addTransaction(transaction);
                                             account.addTransaction(transaction);
+                                            if (card.getClass() == OneTimeCard.class) {
+                                                Transaction deleteTransaction = new DeleteCardTransaction(commandInput.getTimestamp(),
+                                                        "The card has been destroyed", card.getCardNumber(), user.getEmail(),
+                                                        account.getIban());
+                                                user.addTransaction(deleteTransaction);
+                                                account.addTransaction(deleteTransaction);
+                                                card.setCardNumber(Utils.generateCardNumber());
+                                                Transaction createTransaction = new NewCardTransaction(commandInput.getTimestamp(),
+                                                        "New card created",
+                                                        card.getCardNumber(), user.getEmail(), account.getIban());
+                                                user.addTransaction(createTransaction);
+                                                account.addTransaction(createTransaction);
+                                            }
                                             for (Commerciant commerciant : account.getCommerciants()) {
                                                 if (commerciant.getName().equals(commandInput.getCommerciant())) {
                                                     comFound = 1;
                                                 }
                                             }
                                             if (comFound == 0) {
-                                                Commerciant commerciant = new Commerciant(0.0, commandInput.getCommerciant(), commandInput.getTimestamp());
+                                                Commerciant commerciant = new Commerciant(0.0,
+                                                        commandInput.getCommerciant(), commandInput.getTimestamp());
                                                 account.addCommerciant(commerciant);
                                             }
                                         }
-                                        if (enoughFunds == 0 && card.getStatus().equals("active")){
+                                        if (enoughFunds == 0 && card.getStatus().equals("active")) {
                                             Transaction transaction = new ErrorPaymentTransaction(commandInput.getTimestamp(),
                                                     "Insufficient funds");
                                             user.addTransaction(transaction);
@@ -265,7 +293,8 @@ public abstract class Actions {
                                 userSender = user;
                                 senderFound = 1;
                             }
-                            if (account.getIban().equals(receiver) || account.getIban().equals(infoBank.getHashMap().get(receiver))) {
+                            if (account.getIban().equals(receiver)
+                                    || account.getIban().equals(infoBank.getHashMap().get(receiver))) {
                                 receiverCurrency = account.getCurrency();
                                 receiverAccount = account;
                                 userReceiver = user;
@@ -286,19 +315,22 @@ public abstract class Actions {
                     double amount = infoBank.exchange(senderCurrency,
                             receiverCurrency, commandInput.getAmount());
                     PayStrategy bankTransfer = new BankTransfer(receiverAccount,
-                            amount, senderCurrency, commandInput.getAmount());
+                            amount);
                     PaymentContext context = new PaymentContext(bankTransfer);
                     context.executePayment(senderAccount, commandInput.getAmount());
                     Transaction transactionSent = new SendMoneyTransaction(commandInput.getTimestamp(),
                             commandInput.getDescription(),
-                            sender, receiver, sendMoneyToString(commandInput.getAmount(), senderAccount.getCurrency()), "sent");
+                            sender, receiver, sendMoneyToString(commandInput.getAmount(),
+                            senderAccount.getCurrency()), "sent");
                     Transaction transactionReceived = new SendMoneyTransaction(commandInput.getTimestamp(),
                             commandInput.getDescription(),
-                            sender, receiver, sendMoneyToString(amount, receiverAccount.getCurrency()), "received");
-                    userReceiver.addTransaction(transactionReceived);
-                    receiverAccount.addTransaction(transactionReceived);
+                            sender, receiver, sendMoneyToString(amount,
+                            receiverAccount.getCurrency()),
+                            "received");
                     userSender.addTransaction(transactionSent);
                     senderAccount.addTransaction(transactionSent);
+                    userReceiver.addTransaction(transactionReceived);
+                    receiverAccount.addTransaction(transactionReceived);
                     break;
                 case "setAlias":
                     for (User user : infoBank.getUsers()) {
@@ -325,6 +357,7 @@ public abstract class Actions {
                     double sum = commandInput.getAmount();
                     int lenth = 0;
                     String cardError = null;
+
                     if (commandInput.getAccounts() != null) {
                         lenth = commandInput.getAccounts().size();
                     }
@@ -352,8 +385,8 @@ public abstract class Actions {
                                         account.setBalance(account.getBalance() - sumPerMemberExchanged);
                                         String formattedValue = String.format(Locale.US, "%.2f", sum);
                                         String description = splitPaymentToString(formattedValue, commandInput.getCurrency());
-                                        Transaction transactionSplit = new SplitPaymentTransaction(commandInput.getTimestamp(), description,
-                                                commandInput.getCurrency(), sumPerMember, commandInput.getAccounts());
+                                        Transaction transactionSplit = new SplitPaymentTransaction(commandInput.getTimestamp(),
+                                                description, commandInput.getCurrency(), sumPerMember, commandInput.getAccounts());
                                         user.addTransaction(transactionSplit);
                                         account.addTransaction(transactionSplit);
                                     }
@@ -368,8 +401,10 @@ public abstract class Actions {
                                         String formattedValue = String.format(Locale.US, "%.2f", sum);
                                         String description = splitPaymentToString(formattedValue, commandInput.getCurrency());
                                         String error = errorSplitPayment(cardError);
-                                        Transaction transactionErrorSplit = new ErrorSplitPaymentTransaction(commandInput.getTimestamp(), description,
-                                                commandInput.getCurrency(), sumPerMember, commandInput.getAccounts(), error);
+                                        Transaction transactionErrorSplit = new ErrorSplitPaymentTransaction(
+                                                commandInput.getTimestamp(), description,
+                                                commandInput.getCurrency(), sumPerMember,
+                                                commandInput.getAccounts(), error);
                                         user.addTransaction(transactionErrorSplit);
                                         account.addTransaction(transactionErrorSplit);
                                     }
@@ -382,7 +417,8 @@ public abstract class Actions {
                     for (Account account : infoBank.getAccounts()) {
                         if (account.getIban().equals(commandInput.getAccount())) {
                             if (account.getClass() == Savings.class) {
-                                account.setBalance(account.getBalance() + account.getBalance() * ((Savings) account).getInterestRate());
+                                account.setBalance(account.getBalance() + account.getBalance()
+                                        * ((Savings) account).getInterestRate());
                             } else {
                                 JsonOutput.interestRateError(commandInput, objectMapper, output);
                             }
@@ -395,6 +431,11 @@ public abstract class Actions {
                             if (account.getIban().equals(commandInput.getAccount())) {
                                 if (account.getClass() == Savings.class) {
                                     ((Savings) account).setInterestRate(commandInput.getInterestRate());
+                                    String description = changeToString(commandInput.getInterestRate());
+                                    Transaction transaction = new ChangeIrTransaction(
+                                            commandInput.getTimestamp(), description);
+                                    user.addTransaction(transaction);
+                                    account.addTransaction(transaction);
                                 } else {
                                     JsonOutput.interestRateError(commandInput, objectMapper, output);
                                 }
@@ -416,33 +457,41 @@ public abstract class Actions {
                     break;
                 case "spendingsReport":
                     int found = 0;
+                    int savings = 0;
                     Account accountFound = new Account(null, 0.0, null, null);
                     for (Account account : infoBank.getAccounts()) {
                         if (account.getIban().equals(commandInput.getAccount())) {
                             found = 1;
                             accountFound = account;
+                            if (account.getClass() == Savings.class) {
+                                JsonOutput.errorSpendings(commandInput, objectMapper, output);
+                                savings = 1;
+                                break;
+                            }
                         }
                     }
                     if (found == 0) {
                         JsonOutput.errorAccount(commandInput, objectMapper, output);
                         break;
                     }
-                    for (Transaction transaction : accountFound.getTransactions()) {
-                        if (transaction.getDescription().equals("Card payment")) {
-                            if (transaction.getTimestamp() >= commandInput.getStartTimestamp()
-                                    && transaction.getTimestamp() <= commandInput.getEndTimestamp()) {
-                                for (Commerciant commerciant : accountFound.getCommerciants()) {
-                                    if (commerciant.getName().equals(((OnlinePayTransaction) transaction).getCommerciant())) {
-                                        commerciant.setAmount(commerciant.getAmount() + ((OnlinePayTransaction) transaction).getAmount());
+                    if (savings == 0) {
+                        for (Transaction transaction : accountFound.getTransactions()) {
+                            if (transaction.getDescription().equals("Card payment")) {
+                                if (transaction.getTimestamp() >= commandInput.getStartTimestamp()
+                                        && transaction.getTimestamp() <= commandInput.getEndTimestamp()) {
+                                    for (Commerciant commerciant : accountFound.getCommerciants()) {
+                                        if (commerciant.getName().equals(((OnlinePayTransaction) transaction).getCommerciant())) {
+                                            commerciant.setAmount(commerciant.getAmount() + ((OnlinePayTransaction) transaction).getAmount());
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    for (Account account : infoBank.getAccounts()) {
-                        if (account.getIban().equals(commandInput.getAccount())) {
-                            account.getCommerciants().sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
-                            JsonOutput.printSpendingsReport(commandInput, account, objectMapper, output);
+                        for (Account account : infoBank.getAccounts()) {
+                            if (account.getIban().equals(commandInput.getAccount())) {
+                                account.getCommerciants().sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
+                                JsonOutput.printSpendingsReport(commandInput, account, objectMapper, output);
+                            }
                         }
                     }
                     break;
@@ -453,13 +502,18 @@ public abstract class Actions {
             throw new IllegalArgumentException(e);
         }
     }
-    public static String splitPaymentToString(String amount, String currency) {
+    public static String splitPaymentToString(final String amount,
+                                              final String currency) {
         return "Split payment of " + amount + " " + currency;
     }
-    public static String sendMoneyToString(double amount, String currency) {
-        return amount + " " +currency;
+    public static String sendMoneyToString(final double amount,
+                                           final String currency) {
+        return amount + " " + currency;
     }
-    public static String errorSplitPayment(String cardNumber) {
+    public static String errorSplitPayment(final String cardNumber) {
         return "Account " + cardNumber + " has insufficient funds for a split payment.";
+    }
+    public static String changeToString(final double rate) {
+        return "Interest rate of the account changed to " + rate;
     }
 }

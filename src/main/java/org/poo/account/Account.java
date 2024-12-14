@@ -1,14 +1,17 @@
-package org.poo.main;
+package org.poo.account;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.poo.account.card.Card;
+import org.poo.main.Commerciant;
+import org.poo.transactions.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @JsonPropertyOrder({"IBAN", "balance", "currency", "type", "cards"})
-public class Account implements Visitable{
+public class Account {
     @JsonProperty("IBAN")
     private String iban;
     private double balance;
@@ -95,20 +98,32 @@ public class Account implements Visitable{
     public void setType(final String type) {
         this.type = type;
     }
-
+    /**
+     * Getter pentru tranzactiile contului.
+     *
+     */
     public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
-
-    public void setTransactions(ArrayList<Transaction> transactions) {
+    /**
+     * Setter pentru tranzactiile contului.
+     *
+     */
+    public void setTransactions(final ArrayList<Transaction> transactions) {
         this.transactions = transactions;
     }
-
+    /**
+     * Getter pentru comerciantii contului.
+     *
+     */
     public List<Commerciant> getCommerciants() {
         return commerciants;
     }
-
-    public void setCommerciants(List<Commerciant> commerciants) {
+    /**
+     * Setter pentru comerciantii contului.
+     *
+     */
+    public void setCommerciants(final List<Commerciant> commerciants) {
         this.commerciants = commerciants;
     }
 
@@ -116,38 +131,57 @@ public class Account implements Visitable{
      * Getter pentru cardurile asociate contului.
      *
      */
-
     public ArrayList<Card> getCards() {
         return cards;
     }
-
+    /**
+     * Setter pentru cardurile asociate contului.
+     *
+     */
     public void setCards(final ArrayList<Card> card) {
         this.cards = card;
     }
-
+    /**
+     * Getter pentru balanta minima.
+     *
+     */
     public double getMinBalance() {
         return minBalance;
     }
-
+    /**
+     * Seteaza o balanta minima pentru cont.
+     *
+     */
     public void setMinBalance(final double minBalance) {
         this.minBalance = minBalance;
     }
-
+    /**
+     * Adauga un card in lista de carduri.
+     *
+     */
 
     public void addCard(final Card card) {
         cards.add(card);
     }
-
-    public void accept(final Visitor v) {
-        v.visit(this);
-    }
+    /**
+     * Sterge un card al contului.
+     *
+     */
     public void deleteCard(final Card card) {
         cards.remove(card);
     }
-    public void addTransaction(Transaction transaction) {
+    /**
+     * Adauga o tranzactie in cont.
+     *
+     */
+    public void addTransaction(final Transaction transaction) {
         transactions.add(transaction);
     }
-    public void addCommerciant(Commerciant commerciant) {
+    /**
+     * Adauga un comerciant al contului.
+     *
+     */
+    public void addCommerciant(final Commerciant commerciant) {
         commerciants.add(commerciant);
     }
 }

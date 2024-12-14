@@ -1,10 +1,11 @@
-package org.poo.main;
+package org.poo.transactions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({"timestamp", "description", "senderIBAN", "receiverIBAN", "amount", "transferTye"})
-public class SendMoneyTransaction extends Transaction {
+@JsonPropertyOrder({"timestamp", "description", "senderIBAN",
+        "receiverIBAN", "amount", "transferTye"})
+public final class SendMoneyTransaction extends Transaction {
     @JsonProperty("senderIBAN")
     private String senderIban;
     @JsonProperty("receiverIBAN")
@@ -14,8 +15,11 @@ public class SendMoneyTransaction extends Transaction {
     @JsonProperty("transferType")
     private String transferType;
 
-    public SendMoneyTransaction(int timestamp, String description, String senderIban,
-                                String receiverIban, String amount, String transferType) {
+    public SendMoneyTransaction(final int timestamp, final String description,
+                                final String senderIban,
+                                final String receiverIban,
+                                final String amount,
+                                final String transferType) {
         super(timestamp, description);
         this.senderIban = senderIban;
         this.receiverIban = receiverIban;

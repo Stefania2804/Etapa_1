@@ -1,5 +1,10 @@
 package org.poo.main;
 
+import org.poo.account.Account;
+
 public interface PayStrategy {
-    public void pay(Account account,double amount);
+    /**
+     * Functia specifica fiecarei metode de plata.
+     */
+    void pay(Account account, double amount);
 }
