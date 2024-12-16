@@ -122,7 +122,7 @@ public final class InfoBank {
     public double exchange(final String from, final String to,
                            final double amount) {
 
-        Set<String> visited = new HashSet<>();
+        HashSet<String> visited = new HashSet<>();
         double result = recursiveExchange(from, to, amount, visited);
         return result;
     }

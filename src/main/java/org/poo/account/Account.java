@@ -23,6 +23,7 @@ public class Account {
     private ArrayList<Transaction> transactions;
     @JsonIgnore
     private List<Commerciant> commerciants;
+
     public Account(final String iban, final double balance, final String currency,
                    final String type) {
         this.iban = iban;
