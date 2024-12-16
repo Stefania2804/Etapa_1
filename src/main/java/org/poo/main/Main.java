@@ -3,8 +3,12 @@ package org.poo.main;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import org.poo.bank.Exchange;
+import org.poo.bank.InfoBank;
+import org.poo.bank.User;
 import org.poo.checker.Checker;
 import org.poo.checker.CheckerConstants;
+import org.poo.commands.Invoker;
 import org.poo.fileio.CommandInput;
 import org.poo.fileio.ExchangeInput;
 import org.poo.fileio.ObjectInput;
@@ -93,7 +97,10 @@ public final class Main {
         }
         CommandInput[] commands = inputData.getCommands();
         for (int i = 0; i < commands.length; i++) {
-            Actions.applyCommand(commands[i], infoBank, objectMapper, output);
+            if (commands[i] != null) {
+                Invoker invoker = new Invoker();
+                invoker.executeCommand(commands[i], infoBank, objectMapper, output);
+            }
         }
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), output);

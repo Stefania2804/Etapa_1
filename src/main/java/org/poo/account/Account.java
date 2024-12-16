@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.poo.account.card.Card;
-import org.poo.main.Commerciant;
 import org.poo.transactions.Transaction;
 
 import java.util.ArrayList;

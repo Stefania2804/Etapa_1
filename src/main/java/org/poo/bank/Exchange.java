@@ -1,4 +1,4 @@
-package org.poo.main;
+package org.poo.bank;
 
 public final class Exchange {
     private String from;

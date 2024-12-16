@@ -1,4 +1,4 @@
-package org.poo.main;
+package org.poo.account;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
